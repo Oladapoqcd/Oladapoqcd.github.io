@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b0a09" />
+    <title>Oladapo Q. Olaogun — AI literacy & software</title>
+    <meta
+      name="description"
+      content="Oladapo Q. Olaogun — helping people understand AI well enough to make their own informed choices. Computer Science undergraduate at FUTA, based in Lagos. Open to internships and junior software roles."
+    />
+    <meta name="author" content="Oladapo Q. Olaogun" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Oladapo Q. Olaogun — AI literacy & software" />
+    <meta
+      property="og:description"
+      content="AI advocate working on AI literacy and building for social impact. CS undergraduate at FUTA, Lagos."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content="@oladapoqcd" />
+  </head>
+
+  <body>
+    <a class="skip" href="#about">Skip to content</a>
+
+    <!-- ═════════════════════════════════════════════════════ preloader -->
+    <div class="loader" id="loader">
+      <div class="loader__inner">
+        <span class="loader__label" id="loader-label">Loading</span>
+        <span class="loader__pct"><i id="loader-num">0</i>%</span>
+      </div>
+      <div class="loader__bar"><i id="loader-bar"></i></div>
+    </div>
+
+    <!-- If scripting is off the loader must not trap anyone behind it. -->
+    <noscript><style>.loader { display: none !important; }</style></noscript>
+
+    <!-- Custom cursor. The outer element is positioned every frame; the
+         inner ring carries the transitions, so resizing it never fights
+         the position update. -->
+    <div class="cursor" id="cursor" aria-hidden="true"><i class="cursor__ring"></i></div>
+
+    <!-- vertical label on the right edge -->
+    <a class="edge" href="#connect">Open to internships</a>
+
+    <!-- The particle field is one fixed layer behind everything, because it
+         keeps morphing all the way down the page. -->
+    <div class="stage" id="stage" aria-hidden="true">
+      <canvas id="gl"></canvas>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════ nav -->
+    <header class="nav" id="nav">
+      <a class="nav__logo" href="#home">Oladapo Q. Olaogun</a>
+
+      <nav class="nav__links" id="nav-links" aria-label="Sections">
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#connect">Contact</a>
+      </nav>
+
+    </header>
+
+    <!-- ════════════════════════════════════════════════════ social rail -->
+    <ul class="rail" aria-label="Elsewhere">
+      <li>
+        <a href="https://www.linkedin.com/in/oladapo-quadri-olaogun" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.4 8.65 21 11.1 21 14.3V21h-4v-5.9c0-1.4-.03-3.2-1.95-3.2-1.96 0-2.26 1.53-2.26 3.1V21H9z"/></svg>
+        </a>
+      </li>
+      <li>
+        <a href="https://x.com/oladapoqcd" target="_blank" rel="noopener" aria-label="X">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.instagram.com/oladapo_qcd" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="3.8"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/Oladapoqcd" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48l-.01-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85l-.01 2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
+        </a>
+      </li>
+      <li>
+        <a href="https://facebook.com/oladapoqcd" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.54-1.5h1.66V3.63A22 22 0 0 0 14.3 3.5c-2.4 0-4.05 1.47-4.05 4.16V9.9H7.5V13h2.75v8z"/></svg>
+        </a>
+      </li>
+    </ul>
+
+    <main>
+      <!-- ══════════════════════════════════════════════════════ hero -->
+
+      <!-- Stack one: the hero pins and About folds up over it. Both live in
+           the same container so the hero is RELEASED when the container
+           ends — otherwise it stays pinned behind every later section, and
+           the Work panel below (which has no background of its own) would
+           show the hero instead of the gradient. -->
+      <div class="stack">
+      <section class="hero" id="home">
+        <!-- The live gradient behind the page shows through here; this layer
+             only darkens the lower part of it, so roughly the top 60% is
+             colour and the bottom 40% falls back to black. -->
+        <div class="banner" id="hero-frame" aria-hidden="true">
+          <div class="banner__fade"></div>
+        </div>
+
+        <div class="hero__over">
+          <div class="hero__copy">
+            <h1 class="hero__name">Oladapo Q. Olaogun</h1>
+
+            <p class="hero__intro">
+              Helping people understand <strong>AI</strong> well enough to make
+              their own informed choices.
+            </p>
+
+            <div class="hero__cta">
+              <a class="btn btn--primary" href="#connect">Get in touch</a>
+              <a class="btn" href="#work">See the work</a>
+            </div>
+          </div>
+
+          <div class="hero__photo">
+            <img id="stage-fallback" src="/portrait.webp" alt="Oladapo Q. Olaogun" />
+          </div>
+        </div>
+
+        <p class="hero__scroll" id="stage-hint">
+          Scroll
+          <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+        </p>
+      </section>
+        <section class="panel" id="about">
+          <div class="shell">
+            <p class="label" data-reveal>About me</p>
+            <p class="statement" data-reveal>
+              I&rsquo;m an <strong>AI advocate</strong> working on AI literacy, so
+              people can understand AI well enough to make their own informed
+              choices.
+            </p>
+          </div>
+        </section>
+      </div>
+
+
+      <!-- Stack two opens with Work sitting over the live gradient — no
+           background of its own, frosted panels instead. The sections after
+           it are opaque and fold over the top as usual. -->
+      <div class="stack">
+        <section class="panel panel--glass" id="work">
+          <div class="shell">
+            <p class="label" data-reveal>Past work</p>
+            <ol class="works" data-reveal-group>
+              <li class="work">
+                <h2 class="work__title">Exam check-in web app</h2>
+                <div class="work__aside">
+                  <p class="work__desc">
+                    A check-in tool for students sitting exams. Built with
+                    Firebase for data and auth, deployed on Vercel.
+                  </p>
+                  <!-- TODO(oladapo): how many students used the check-in app?
+                       Fill in and uncomment once you have the real figure.
+                       <p class="work__stat">Used by <b>000</b> students</p> -->
+                  <ul class="chips">
+                    <li>Firebase</li>
+                    <li>Vercel</li>
+                    <li>JavaScript</li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="work">
+                <h2 class="work__title">Offline CBT quiz apps</h2>
+                <div class="work__aside">
+                  <p class="work__desc">
+                    I built computer-based test apps from course PDFs, slide
+                    exports and scanned pages, then shared them with my course
+                    mates over WhatsApp. They worked offline, because that is
+                    how people actually revise.
+                  </p>
+                  <!-- TODO(oladapo): two numbers to fill in when you have them —
+                       (a) how many students received these, (b) how many courses.
+                       <p class="work__stat"><b>000</b> students · <b>00</b> courses</p> -->
+                  <ul class="chips">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Offline-first</li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="work">
+                <h2 class="work__title">AI literacy advocacy</h2>
+                <div class="work__aside">
+                  <p class="work__desc">
+                    I write about AI on X and LinkedIn. Not predictions or
+                    product launches, but how the systems actually work
+                    underneath, so people can judge the claims being made
+                    about them for themselves.
+                  </p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </section>
+      <section class="panel" id="what">
+        <div class="shell">
+          <p class="label" data-reveal>What I do</p>
+
+          <ul class="doing">
+            <li class="doing__row">
+              <h2 class="doing__word">AI literacy</h2>
+              <p class="doing__note">Explaining AI and LLM concepts in plain language, for everyone.</p>
+            </li>
+            <li class="doing__row">
+              <h2 class="doing__word">Web apps</h2>
+              <p class="doing__note">Small, useful tools for students, built with Firebase and Vercel.</p>
+            </li>
+            <li class="doing__row">
+              <h2 class="doing__word">Study tools</h2>
+              <p class="doing__note">Turning course PDFs, slide exports and photographs of textbook pages into something you can revise from.</p>
+            </li>
+            <li class="doing__row">
+              <h2 class="doing__word">Social impact</h2>
+              <p class="doing__note">The reason for all of it. Technology people can understand is technology people can choose.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+        <section class="panel" id="education">
+          <div class="shell">
+            <p class="label" data-reveal>Education</p>
+            <ul class="hist" data-reveal-group>
+              <li class="hist__row">
+                <span class="hist__when">Oct 2025 &mdash; Dec 2030</span>
+                <span class="hist__what">
+                  <b>BTech, Computer Science</b>
+                  <i>Federal University of Technology, Akure &middot; currently studying</i>
+                </span>
+              </li>
+              <li class="hist__row">
+                <span class="hist__when">Based in</span>
+                <span class="hist__what">
+                  <b>Lagos, Nigeria</b>
+                  <i>Open to internships and junior software roles, remote or on-site</i>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="panel panel--end" id="connect">
+          <div class="shell">
+            <p class="label" data-reveal>Connect</p>
+
+            <h2 class="big">Let&rsquo;s talk</h2>
+
+            <a class="mail" href="mailto:olaogunquadri2@gmail.com" data-reveal>olaogunquadri2@gmail.com</a>
+
+            <ul class="links" data-reveal-group>
+              <li>
+                <a href="https://www.linkedin.com/in/oladapo-quadri-olaogun" target="_blank" rel="noopener">
+                  <b>LinkedIn</b><i>The professional one</i>
+                </a>
+              </li>
+              <li>
+                <a href="https://x.com/oladapoqcd" target="_blank" rel="noopener">
+                  <b>X</b><i>@oladapoqcd</i>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/oladapo_qcd" target="_blank" rel="noopener">
+                  <b>Instagram</b><i>@oladapo_qcd</i>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/Oladapoqcd" target="_blank" rel="noopener">
+                  <b>GitHub</b><i>@Oladapoqcd</i>
+                </a>
+              </li>
+              <li>
+                <a href="https://facebook.com/oladapoqcd" target="_blank" rel="noopener">
+                  <b>Facebook</b><i>@oladapoqcd</i>
+                </a>
+              </li>
+            </ul>
+
+            <p class="avail" data-reveal>Open to internships and junior software roles.</p>
+
+            <footer class="foot">
+              <span>&copy; <span id="year">2026</span> Oladapo Q. Olaogun</span>
+              <a href="#home">Back to top &uarr;</a>
+            </footer>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script type="module" src="/src/js/main.js"></script>
+  </body>
+</html>
